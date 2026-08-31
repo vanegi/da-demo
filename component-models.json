@@ -205,6 +205,523 @@
     ]
   },
   {
+    "id": "primary-hero",
+    "fields": [
+      {
+        "component": "select",
+        "name": "primaryBackgroundType",
+        "label": "Primary Background Type",
+        "description": "Select Background Type Primary Hero",
+        "value": "imageSlide",
+        "required": true,
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Image",
+            "value": "imageSlide"
+          },
+          {
+            "name": "Video",
+            "value": "videoSlide"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "title",
+        "label": "Title",
+        "value": "",
+        "valueType": "string",
+        "description": "Enter main heading for the Primary Hero"
+      },
+      {
+        "component": "select",
+        "name": "titleFontSize",
+        "label": "Title Font Size",
+        "description": "Select the font size for the title",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "100px",
+            "value": "100px"
+          },
+          {
+            "name": "60px",
+            "value": "60px"
+          },
+          {
+            "name": "48px",
+            "value": "48px"
+          },
+          {
+            "name": "36px",
+            "value": "36px"
+          },
+          {
+            "name": "32px",
+            "value": "32px"
+          },
+          {
+            "name": "28px",
+            "value": "28px"
+          },
+          {
+            "name": "24px",
+            "value": "24px"
+          },
+          {
+            "name": "20px",
+            "value": "20px"
+          },
+          {
+            "name": "16px",
+            "value": "16px"
+          },
+          {
+            "name": "14px",
+            "value": "14px"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "titleFont",
+        "label": "Title Font",
+        "value": "Ringside",
+        "valueType": "string",
+        "description": "Select a font for the title",
+        "options": [
+          {
+            "name": "Garamond",
+            "value": "Garamond"
+          },
+          {
+            "name": "Ringside",
+            "value": "Ringside"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "value": "",
+        "valueType": "string",
+        "description": "Enter description for additional context"
+      },
+      {
+        "component": "select",
+        "name": "descriptionFontSize",
+        "label": "Description Font Size",
+        "description": "Select the font size for the description",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "100px",
+            "value": "100px"
+          },
+          {
+            "name": "60px",
+            "value": "60px"
+          },
+          {
+            "name": "48px",
+            "value": "48px"
+          },
+          {
+            "name": "36px",
+            "value": "36px"
+          },
+          {
+            "name": "32px",
+            "value": "32px"
+          },
+          {
+            "name": "28px",
+            "value": "28px"
+          },
+          {
+            "name": "24px",
+            "value": "24px"
+          },
+          {
+            "name": "20px",
+            "value": "20px"
+          },
+          {
+            "name": "16px",
+            "value": "16px"
+          },
+          {
+            "name": "14px",
+            "value": "14px"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "size",
+        "label": "Size",
+        "value": "large",
+        "valueType": "string",
+        "description": "Enter the size of the hero",
+        "options": [
+          {
+            "name": "Medium",
+            "value": "medium"
+          },
+          {
+            "name": "Large",
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "name": "offsetContent",
+        "label": "Offset Content?",
+        "value": false,
+        "valueType": "boolean",
+        "description": "Offset content on the left in the hero section"
+      },
+      {
+        "component": "reference",
+        "name": "backgroundImage",
+        "label": "Background Image",
+        "description": "Upload Image for the Primary Hero",
+        "multi": false,
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "backgroundImageAlt",
+        "label": "Background Image Alt (from asset)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "valueType": "string",
+        "description": "Add Alt Text for Image Primary Hero"
+      },
+      {
+        "component": "reference",
+        "name": "videoPath",
+        "label": "Video Path",
+        "description": "Upload the full-length video",
+        "multi": false,
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "icon",
+        "label": "Icon",
+        "description": "Upload the icon image",
+        "multi": false,
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "iconAssetAlt",
+        "label": "Icon Alt (from asset)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "iconAlt",
+        "label": "Icon Alt text",
+        "valueType": "string",
+        "description": "Pick alt text from AEM DAM with ability to override it"
+      },
+      {
+        "component": "select",
+        "name": "textcolor",
+        "label": "Text Color",
+        "description": "Select the Text Color",
+        "value": "white",
+        "required": true,
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Black",
+            "value": "black"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "ctaNumber",
+        "label": "Number of CTA(s)",
+        "description": "Select the number of CTA(s) required",
+        "value": "one",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "One",
+            "value": "one"
+          },
+          {
+            "name": "Two",
+            "value": "two"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "ctaStyle",
+        "label": "First CTA Style",
+        "description": "Select the style of the Button CTA",
+        "value": "primary",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "ctaLabel",
+        "label": "First CTA Label",
+        "valueType": "string",
+        "description": "Enter label to display on the CTA"
+      },
+      {
+        "component": "select",
+        "name": "ctaType",
+        "label": "First CTA Selection",
+        "description": "Select the CTA Selection",
+        "value": "link",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Link",
+            "value": "link"
+          },
+          {
+            "name": "Asset (PDF/Image)",
+            "value": "asset"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "ctaLink",
+        "label": "First CTA Link",
+        "valueType": "string",
+        "description": "Enter the URL to navigate when CTA is clicked"
+      },
+      {
+        "component": "reference",
+        "name": "ctaAsset",
+        "label": "First CTA Asset (PDF/Image)",
+        "description": "Upload the Asset (PDF/Image)",
+        "multi": false,
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "ctaAria",
+        "label": "First CTA ARIA Label",
+        "valueType": "string",
+        "description": "Enter ARIA label to comply ADA"
+      },
+      {
+        "component": "select",
+        "name": "targetPath",
+        "label": "First CTA Target Path",
+        "description": "Select the target path for the authored CTA URL",
+        "value": "sameTab",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Same Tab",
+            "value": "sameTab"
+          },
+          {
+            "name": "New Tab",
+            "value": "newTab"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "exitInterstitial",
+        "label": "First CTA Exit Interstitial",
+        "value": "select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "select",
+            "value": "select"
+          },
+          {
+            "name": "General Third Parties",
+            "value": "general-third-parties"
+          },
+          {
+            "name": "Telehealth",
+            "value": "telehealth"
+          },
+          {
+            "name": "Account",
+            "value": "account"
+          },
+          {
+            "name": "Account Wellbeing",
+            "value": "account-wellbeing"
+          },
+          {
+            "name": "Embedded Tools Healthgrades",
+            "value": "embedded-tools-healthgrades"
+          },
+          {
+            "name": "Embedded Tools Nourish",
+            "value": "embedded-tools-nourish"
+          },
+          {
+            "name": "LPA Interstitial",
+            "value": "lpa"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "secCtaStyle",
+        "label": "Second CTA Style",
+        "description": "Select the style of the Button CTA",
+        "value": "primary",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "secCtaLabel",
+        "label": "Second CTA Label",
+        "valueType": "string",
+        "description": "Enter label to display on the CTA"
+      },
+      {
+        "component": "select",
+        "name": "secCtaType",
+        "label": "Second CTA Selection",
+        "description": "Select the CTA Selection",
+        "value": "link",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Link",
+            "value": "link"
+          },
+          {
+            "name": "Asset (PDF/Image)",
+            "value": "asset"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "secCtaLink",
+        "label": "Second CTA Link",
+        "valueType": "string",
+        "description": "Enter the URL to navigate when CTA is clicked"
+      },
+      {
+        "component": "reference",
+        "name": "secCtaAsset",
+        "label": "Second CTA Asset (PDF/Image)",
+        "description": "Upload the Asset (PDF/Image)",
+        "multi": false,
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "secCtaAria",
+        "label": "Second CTA ARIA Label",
+        "valueType": "string",
+        "description": "Enter ARIA label to comply ADA"
+      },
+      {
+        "component": "select",
+        "name": "secTargetPath",
+        "label": "Second CTA Target Path",
+        "description": "Select the target path for the authored CTA URL",
+        "value": "sameTab",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Same Tab",
+            "value": "sameTab"
+          },
+          {
+            "name": "New Tab",
+            "value": "newTab"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "secExitInterstitial",
+        "label": "Second CTA Exit Interstitial",
+        "value": "select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "select",
+            "value": "select"
+          },
+          {
+            "name": "General Third Parties",
+            "value": "general-third-parties"
+          },
+          {
+            "name": "Telehealth",
+            "value": "telehealth"
+          },
+          {
+            "name": "Account",
+            "value": "account"
+          },
+          {
+            "name": "Account Wellbeing",
+            "value": "account-wellbeing"
+          },
+          {
+            "name": "Embedded Tools Healthgrades",
+            "value": "embedded-tools-healthgrades"
+          },
+          {
+            "name": "Embedded Tools Nourish",
+            "value": "embedded-tools-nourish"
+          },
+          {
+            "name": "LPA Interstitial",
+            "value": "lpa"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "search",
     "fields": [
       {
