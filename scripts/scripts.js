@@ -17,6 +17,8 @@ import {
   toCamelCase,
 } from './aem.js';
 
+// Origin for Document Authoring (DA/NX) hosted plugins, e.g. the experiment plugin.
+export const NX_ORIGIN = 'https://da.live/nx';
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
