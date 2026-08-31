@@ -251,6 +251,150 @@
           }
         },
         {
+          "title": "Primary Hero",
+          "id": "primary-hero",
+          "model": "primary-hero",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"primary-hero\"><div><div>imageSlide</div></div><div><div></div></div><div><div></div></div><div><div>Ringside</div></div><div><div></div></div><div><div></div></div><div><div>large</div></div><div><div>false</div></div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div></div><div><div></div></div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div></div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div></div><div><div></div></div><div><div>white</div></div><div><div>one</div></div><div><div>primary</div></div><div><div></div></div><div><div>link</div></div><div><div></div></div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div></div><div><div></div></div><div><div>sameTab</div></div><div><div>select</div></div><div><div>primary</div></div><div><div></div></div><div><div>link</div></div><div><div></div></div><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div></div><div><div></div></div><div><div>sameTab</div></div><div><div>select</div></div></div>",
+              "fields": [
+                {
+                  "name": "primaryBackgroundType",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "title",
+                  "selector": "div:nth-child(2)>div"
+                },
+                {
+                  "name": "titleFontSize",
+                  "selector": "div:nth-child(3)>div"
+                },
+                {
+                  "name": "titleFont",
+                  "selector": "div:nth-child(4)>div"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(5)>div"
+                },
+                {
+                  "name": "descriptionFontSize",
+                  "selector": "div:nth-child(6)>div"
+                },
+                {
+                  "name": "size",
+                  "selector": "div:nth-child(7)>div"
+                },
+                {
+                  "name": "offsetContent",
+                  "selector": "div:nth-child(8)>div"
+                },
+                {
+                  "name": "backgroundImage",
+                  "selector": "div:nth-child(9)>div>picture>img[src]"
+                },
+                {
+                  "name": "backgroundImageAlt",
+                  "selector": "div:nth-child(9)>div>picture>img[alt]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(10)>div"
+                },
+                {
+                  "name": "videoPath",
+                  "selector": "div:nth-child(11)>div>picture>img[src]"
+                },
+                {
+                  "name": "icon",
+                  "selector": "div:nth-child(12)>div>picture>img[src]"
+                },
+                {
+                  "name": "iconAssetAlt",
+                  "selector": "div:nth-child(12)>div>picture>img[alt]"
+                },
+                {
+                  "name": "iconAlt",
+                  "selector": "div:nth-child(13)>div"
+                },
+                {
+                  "name": "textcolor",
+                  "selector": "div:nth-child(14)>div"
+                },
+                {
+                  "name": "ctaNumber",
+                  "selector": "div:nth-child(15)>div"
+                },
+                {
+                  "name": "ctaStyle",
+                  "selector": "div:nth-child(16)>div"
+                },
+                {
+                  "name": "ctaLabel",
+                  "selector": "div:nth-child(17)>div"
+                },
+                {
+                  "name": "ctaType",
+                  "selector": "div:nth-child(18)>div"
+                },
+                {
+                  "name": "ctaLink",
+                  "selector": "div:nth-child(19)>div"
+                },
+                {
+                  "name": "ctaAsset",
+                  "selector": "div:nth-child(20)>div>picture>img[src]"
+                },
+                {
+                  "name": "ctaAria",
+                  "selector": "div:nth-child(21)>div"
+                },
+                {
+                  "name": "targetPath",
+                  "selector": "div:nth-child(22)>div"
+                },
+                {
+                  "name": "exitInterstitial",
+                  "selector": "div:nth-child(23)>div"
+                },
+                {
+                  "name": "secCtaStyle",
+                  "selector": "div:nth-child(24)>div"
+                },
+                {
+                  "name": "secCtaLabel",
+                  "selector": "div:nth-child(25)>div"
+                },
+                {
+                  "name": "secCtaType",
+                  "selector": "div:nth-child(26)>div"
+                },
+                {
+                  "name": "secCtaLink",
+                  "selector": "div:nth-child(27)>div"
+                },
+                {
+                  "name": "secCtaAsset",
+                  "selector": "div:nth-child(28)>div>picture>img[src]"
+                },
+                {
+                  "name": "secCtaAria",
+                  "selector": "div:nth-child(29)>div"
+                },
+                {
+                  "name": "secTargetPath",
+                  "selector": "div:nth-child(30)>div"
+                },
+                {
+                  "name": "secExitInterstitial",
+                  "selector": "div:nth-child(31)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Quote",
           "id": "quote",
           "model": "quote",
