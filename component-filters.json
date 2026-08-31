@@ -34,10 +34,6 @@
     ]
   },
   {
-    "id": "primary-hero",
-    "components": []
-  },
-  {
     "id": "cards",
     "components": [
       "card"
