@@ -7,48 +7,51 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
  * description and a call-to-action button over a dark gradient dimmer.
  * Design reference: lilly.com/conditions/alzheimers-disease.
  *
- * Authored structure (single row, two cells):
- *   cell 1: background image (picture/img)
- *   cell 2: text content (heading, description, CTA link)
+ * The block is tolerant of how it is authored. The first image found becomes
+ * the background; everything else (heading, paragraphs, links) becomes the
+ * overlaid text content — whether the author put the image and text in
+ * separate cells or stacked them in a single cell.
  */
 
 export default function decorate(block) {
-  const row = block.firstElementChild;
-  const cells = row ? [...row.children] : [];
-  const [imageCell, textCell] = cells;
-
-  block.textContent = '';
+  // Pull the first image out to use as the background layer.
+  const img = block.querySelector('img');
+  const picture = img?.closest('picture');
 
   const inner = document.createElement('div');
   inner.className = 'primary-hero-inner';
 
-  // Background image layer (optimized picture)
-  const img = imageCell?.querySelector('img');
   if (img) {
     const bg = document.createElement('div');
     bg.className = 'primary-hero-bg';
-    const picture = createOptimizedPicture(img.src, img.alt, true, [{ width: '2000' }]);
-    bg.append(picture);
+    bg.append(createOptimizedPicture(img.src, img.alt, true, [{ width: '2000' }]));
     inner.append(bg);
+    // Remove the original picture (and any now-empty wrapper paragraph).
+    const wrapper = picture?.closest('p');
+    picture?.remove();
+    if (wrapper && wrapper.textContent.trim() === '' && !wrapper.querySelector('img, picture')) {
+      wrapper.remove();
+    }
   }
 
-  // Dimmer for text legibility
+  // Dimmer for text legibility.
   const dimmer = document.createElement('div');
   dimmer.className = 'primary-hero-dimmer';
   inner.append(dimmer);
 
-  // Content
+  // Everything that survives becomes the overlaid content.
   const content = document.createElement('div');
   content.className = 'primary-hero-content';
-  if (textCell) {
-    while (textCell.firstChild) content.append(textCell.firstChild);
-  }
+  block.querySelectorAll(':scope > div > div').forEach((cell) => {
+    while (cell.firstChild) content.append(cell.firstChild);
+  });
 
-  // Style the last link (if any) as a CTA button
+  // Style the last link (if any) as a CTA button.
   const links = content.querySelectorAll('a');
   const cta = links[links.length - 1];
   if (cta) cta.classList.add('primary-hero-cta');
 
+  block.textContent = '';
   inner.append(content);
   block.append(inner);
 }
