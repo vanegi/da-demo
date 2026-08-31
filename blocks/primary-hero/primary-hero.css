@@ -1,8 +1,8 @@
 /*
- * Primary Hero Block (DA.live)
- * Styling ported from the Universal Editor Primary Hero, with LDS design tokens
- * replaced by concrete values. Recreates the full-bleed background, gradient
- * dimmer, large heading and filled/outline CTA buttons of the reference hero.
+ * Primary Hero Block
+ * Full-bleed hero: background image, dark gradient dimmer, left-aligned
+ * white heading, description and a filled CTA button.
+ * Design reference: lilly.com/conditions/alzheimers-disease.
  */
 
 .primary-hero-wrapper {
@@ -10,229 +10,106 @@
   padding: 0;
 }
 
-.primary-hero .scroll-container {
+.primary-hero .primary-hero-inner {
   position: relative;
-}
-
-.primary-hero .hero,
-.primary-hero .hero-video {
-  position: relative;
-  z-index: 1;
-  height: 900px;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
-.primary-hero .hero.medium,
-.primary-hero .hero-video.medium {
-  height: 714px;
-}
-
-/* Video background layer */
-.primary-hero video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  object-fit: cover;
-}
-
 /* Background image layer */
-.primary-hero .hero .hero-bg {
+.primary-hero .primary-hero-bg {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
 }
 
-.primary-hero .hero .hero-bg img,
-.primary-hero .hero img.hero-bg {
+.primary-hero .primary-hero-bg picture,
+.primary-hero .primary-hero-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
-/* Dimmer gradient for legibility with light text */
-.primary-hero .hero .dimmer {
+/* Dark overlay for legibility (uniform dim + slightly stronger on the left) */
+.primary-hero .primary-hero-dimmer {
   position: absolute;
   inset: 0;
-  z-index: -1;
-  opacity: 0.7;
-  background: linear-gradient(90deg, #000 0%, rgb(0 0 0 / 0%) 100%);
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 45%) 45%, rgb(0 0 0 / 30%) 100%),
+    rgb(0 0 0 / 25%);
 }
 
-/* Content container */
-.primary-hero .container {
+/* Content */
+.primary-hero .primary-hero-content {
   position: relative;
-  top: 0;
-  left: 0;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 48px 24px;
+  margin: 0 auto;
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 40px 64px;
-}
-
-.primary-hero .container .content-inner {
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
-  max-width: 640px;
-}
-
-.primary-hero .container .content-inner.offset-content {
-  margin-left: 8%;
-}
-
-/* Icon */
-.primary-hero .content-inner .icon {
-  width: auto;
-  height: 45px;
-  margin-bottom: 8px;
-}
-
-.primary-hero .content-inner .icon img {
-  width: auto;
-  height: 45px;
-}
-
-/* Title */
-.primary-hero .title {
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
-
-.primary-hero .title * {
-  margin: 0;
-}
-
-.primary-hero .title h1,
-.primary-hero .title h2 {
-  margin: 0;
-  font-size: var(--heading-font-size-xxl);
-  line-height: 1.05;
-  letter-spacing: -0.5px;
-}
-
-/* Title font family (authored value is used verbatim as a class) */
-/* stylelint-disable-next-line selector-class-pattern */
-.primary-hero .title.Garamond * {
-  font-family: var(--body-font-family), Georgia, "Times New Roman", serif;
-}
-
-/* Text colors */
-.primary-hero .container.light,
-.primary-hero .container.light .title *,
-.primary-hero .container.light .description * {
   color: #fff;
 }
 
-.primary-hero .container.dark,
-.primary-hero .container.dark .title *,
-.primary-hero .container.dark .description * {
-  color: #131313;
+.primary-hero .primary-hero-content h1,
+.primary-hero .primary-hero-content h2 {
+  margin: 0 0 40px;
+  max-width: 15ch;
+  color: #fff;
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
-/* Description */
-.primary-hero .description {
+.primary-hero .primary-hero-content p {
+  margin: 0 0 24px;
+  max-width: 30ch;
+  color: #fff;
   font-size: var(--body-font-size-m);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-.primary-hero .description p {
-  margin: 0 0 12px;
-}
-
-.primary-hero .description ul,
-.primary-hero .description ol {
-  padding-left: 24px;
-  margin-bottom: 24px;
-}
-
-/* Buttons */
-.primary-hero .btn-container {
-  display: flex;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.primary-hero .cta-button-filled,
-.primary-hero .cta-button-outline {
+/* CTA button — red pill with white text and trailing arrow */
+.primary-hero .primary-hero-content a.primary-hero-cta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
   padding: 14px 28px;
-  border-radius: 4px;
+  background: #d52b1e;
+  color: #fff;
   font-weight: 700;
   text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
 }
 
-.primary-hero .cta-button-filled {
-  background: #fff;
-  color: #131313;
-  border: 2px solid #fff;
+.primary-hero .primary-hero-content a.primary-hero-cta::after {
+  content: "→";
+  font-size: 1.1em;
+  line-height: 1;
 }
 
-.primary-hero .cta-button-filled:hover {
-  opacity: 0.85;
+.primary-hero .primary-hero-content a.primary-hero-cta:hover {
+  background: #b71f14;
 }
 
-.primary-hero .cta-button-outline {
-  background: transparent;
-  border: 2px solid #fff;
-}
-
-.primary-hero .cta-button-outline:hover {
-  background: rgb(255 255 255 / 15%);
-}
-
-.primary-hero .container.light .cta-button-outline {
-  color: #fff;
-  border-color: #fff;
-}
-
-.primary-hero .container.dark .cta-button-filled {
-  background: #131313;
-  color: #fff;
-  border-color: #131313;
-}
-
-.primary-hero .container.dark .cta-button-outline {
-  color: #131313;
-  border-color: #131313;
-}
-
-/* Responsive */
-@media (width < 1200px) {
-  .primary-hero .hero {
-    height: 720px;
+@media (width >= 900px) {
+  .primary-hero .primary-hero-inner {
+    min-height: 780px;
   }
 
-  .primary-hero .hero.medium {
-    height: 612px;
+  .primary-hero .primary-hero-content {
+    padding: 64px 32px;
   }
 
-  .primary-hero .btn-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (width < 900px) {
-  .primary-hero .container {
-    padding: 32px 24px;
-  }
-
-  .primary-hero .container .content-inner.offset-content {
-    margin-left: 0;
-  }
-
-  .primary-hero .title h1,
-  .primary-hero .title h2 {
-    font-size: var(--heading-font-size-xl);
+  .primary-hero .primary-hero-content h1,
+  .primary-hero .primary-hero-content h2 {
+    font-size: 64px;
   }
 }
